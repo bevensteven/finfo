@@ -2,6 +2,6 @@ extends layout
 
 block content
     form(method='GET' action="/search")
-        .wrap.search
-            input(type='text' name="ticker" placeholder='ticker')
-            button.searchButton(type='submit') 🕵️‍♂️
+        .searchBar
+            input.u-full-width(type='text' name="ticker" placeholder='ticker')
+            button.button-primary(type='submit') 🕵️‍♂️

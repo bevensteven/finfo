@@ -4,51 +4,55 @@ block content
     include search.pug
 
     h1= `$${ticker}`
+
+    .row
     
-    //- Zacks
-    h2 🔍 Zacks
+        .one-half.column
+            //- Zacks
+            h2 🔍 Zacks
 
-    h5 Industry Rank
-    ul
-        each s in zacksData.industryRank.reverse()
-            li= s
+            h5 Industry Rank
+            ul
+                each s in zacksData.industryRank.reverse()
+                    li= s
 
-    h5 Rank & Score
-    //- TODO: format color based on rank, scores
-    table
-        thead
-        tbody
-            tr
-                td Rank
-                td= zacksData.zacksRank[0]
-            each v, k in zacksData.styleScores
-                tr
-                    td= k
-                    td= v
+            h5 Rank & Score
+            //- TODO: format color based on rank, scores
+            table
+                thead
+                tbody
+                    tr
+                        td Rank
+                        td= zacksData.zacksRank[0]
+                    each v, k in zacksData.styleScores
+                        tr
+                            td= k
+                            td= v
 
-    h3 Key Earnings Data
-    table
-        thead
-        tbody
-            each v, k in zacksData.keyEarningsData 
-                tr
-                    td= k
-                    td= v
+            h3 Key Earnings Data
+            table
+                thead
+                tbody
+                    each v, k in zacksData.keyEarningsData 
+                        tr
+                            td= k
+                            td= v
 
-    //- Yahoo
-    h2 🗓 Yahoo Earnings History
-    table
-        thead
-            tr
-                th Date
-                th Estimate
-                th Reported
-                th Surprise
-        tbody
-            each r in yahooData
-                tr
-                    td= r.date
-                    td= r.est
-                    td= r.reported
-                    //- TODO: format color based on surprise value
-                    td= r.surprise
+        .one-half.column
+            //- Yahoo
+            h2 🗓 Yahoo Earnings History
+            table
+                thead
+                    tr
+                        th Date
+                        th Estimate
+                        th Reported
+                        th Surprise
+                tbody
+                    each r in yahooData
+                        tr
+                            td= r.date
+                            td= r.est
+                            td= r.reported
+                            //- TODO: format color based on surprise value
+                            td= r.surprise
