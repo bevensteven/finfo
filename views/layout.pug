@@ -1,9 +1,13 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/normalize.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/stylesheets/skeleton.css')
-  body
-    block content
+    head
+        if ticker
+            title= `$${ticker}`
+        else
+            title Welcome
+        link(rel='shortcut icon', href='/images/favicon.ico')
+        link(rel='stylesheet', href='/stylesheets/normalize.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/stylesheets/skeleton.css')
+    body
+        block content
