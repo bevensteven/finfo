@@ -9,6 +9,23 @@ a {
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
+.animate-container {
+  animation: expand 0.7s ease backwards;
+}
+
+@keyframes expand {
+  0% {
+    transform: translateY(1000px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.index {
+  padding: 5%;
+}
+
 h1.header {
   margin-bottom: 4rem;
 }

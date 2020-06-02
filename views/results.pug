@@ -1,69 +1,70 @@
 extends layout
 
 block content
-    include search.pug
+    .animate-container
+        include search.pug
 
-    h1.header
-        strong
-            a= zacksData.header
+        h1.header
+            strong
+                a= zacksData.header
 
-    .row
+        .row
 
-        .one-half.column
-            //- Links
-            h2 ✈️ Links
+            .one-half.column
+                //- Links
+                h2 ✈️ Links
 
-            each v, k in links
-                span 🔗
-                    a(href= v)= k
+                each v, k in links
+                    span 🔗
+                        a(href= v)= k
+                    br
                 br
-            br
 
-            //- Zacks
-            h2 🔍 Zacks
+                //- Zacks
+                h2 🔍 Zacks
 
-            h5 Industry Rank
-            ul
-                each s in zacksData.industryRank.reverse()
-                    li= s
+                h5 Industry Rank
+                ul
+                    each s in zacksData.industryRank.reverse()
+                        li= s
 
-            h5 Rank & Score
-            //- TODO: format color based on rank, scores
-            table
-                thead
-                tbody
-                    tr
-                        td Rank
-                        td= zacksData.zacksRank[0]
-                    each v, k in zacksData.styleScores
+                h5 Rank & Score
+                //- TODO: format color based on rank, scores
+                table
+                    thead
+                    tbody
                         tr
-                            td= k
-                            td= v
+                            td Rank
+                            td= zacksData.zacksRank[0]
+                        each v, k in zacksData.styleScores
+                            tr
+                                td= k
+                                td= v
 
-            h3 Key Earnings Data
-            table
-                thead
-                tbody
-                    each v, k in zacksData.keyEarningsData 
-                        tr
-                            td= k
-                            td= v
+                h3 Key Earnings Data
+                table
+                    thead
+                    tbody
+                        each v, k in zacksData.keyEarningsData 
+                            tr
+                                td= k
+                                td= v
 
-        .one-half.column
-            //- Yahoo
-            h2 🗓 Yahoo Earnings History
-            table
-                thead
-                    tr
-                        th Date
-                        th Estimate
-                        th Reported
-                        th Surprise
-                tbody
-                    each r in yahooData
+            .one-half.column
+                //- Yahoo
+                h2 🗓 Yahoo Earnings History
+                table
+                    thead
                         tr
-                            td= r.date
-                            td= r.est
-                            td= r.reported
-                            //- TODO: format color based on surprise value
-                            td= r.surprise
+                            th Date
+                            th Estimate
+                            th Reported
+                            th Surprise
+                    tbody
+                        each r in yahooData
+                            tr
+                                td= r.date
+                                td= r.est
+                                td= r.reported
+                                //- TODO: format color based on surprise value
+                                td= r.surprise
