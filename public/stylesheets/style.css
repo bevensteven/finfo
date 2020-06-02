@@ -9,6 +9,14 @@ a {
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
+h1.header {
+  margin-bottom: 4rem;
+}
+
+input.u-full-width {
+  margin-right: 2px;
+}
+
 .searchTerm {
   /* width: 100%; */
   border: 3px solid #00B4CC;

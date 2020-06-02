@@ -3,11 +3,22 @@ extends layout
 block content
     include search.pug
 
-    h1= `$${ticker}`
+    h1.header
+        strong
+            a= zacksData.header
 
     .row
 
         .one-half.column
+            //- Links
+            h2 ✈️ Links
+
+            each v, k in links
+                span 🔗
+                    a(href= v)= k
+                br
+            br
+
             //- Zacks
             h2 🔍 Zacks
 

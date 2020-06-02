@@ -13,6 +13,8 @@ exports.fetchData = async (ticker) => {
   // TODO: handle "no response" pages
   const $ = cheerio.load(response.data);
 
+  const header = $("div.quote_summary").find("header>h1").text();
+
   const keyEarningsData = $("#stock_key_earnings")
     .find("tr")
     .map(function (i, el) {
@@ -53,6 +55,7 @@ exports.fetchData = async (ticker) => {
     .filter((w) => w.length > 0);
 
   const result = {
+    header,
     zacksRank,
     styleScores,
     industryRank,
