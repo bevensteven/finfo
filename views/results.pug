@@ -66,5 +66,11 @@ block content
                                 td= r.date
                                 td= r.est
                                 td= r.reported
-                                //- TODO: format color based on surprise value
-                                td= r.surprise
+                                //- surprise data
+                                - var surprise = r.surprise
+                                if surprise.startsWith('+')
+                                    td.green= surprise
+                                else if surprise.startsWith('-')
+                                    td.red= surprise
+                                else
+                                    td= surprise

@@ -22,6 +22,14 @@ a {
   }
 }
 
+td.green {
+  color: green;
+}
+
+td.red {
+  color: red;
+}
+
 .index {
   padding: 5%;
 }
