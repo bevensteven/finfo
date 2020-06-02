@@ -10,7 +10,7 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/search", async function (req, res, next) {
-  const ticker = req.query.ticker;
+  const ticker = req.query.ticker.toUpperCase();
 
   // fetch data
   const [yahooData, zacksData] = await Promise.all([

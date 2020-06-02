@@ -3,5 +3,6 @@ extends layout
 block content
     form(method='GET' action="/search")
         .searchBar
+            //- TODO: implement autocomplete on tickers/companies
             input.u-full-width(type='text' name="ticker" placeholder='ticker')
             button.button-primary(type='submit') 🕵️‍♂️
